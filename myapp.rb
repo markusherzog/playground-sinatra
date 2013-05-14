@@ -4,4 +4,12 @@ class MyApp < Sinatra::Application
 	get '/' do
 		'Hello world!'
 	end
+
+	get '/hello/:name' do |name|
+		"Hallo #{name}"
+	end
+
+	get '/yo!/:name' do |name|
+		erb :yo, :locals => {:name => "#{name}"}
+	end
 end
