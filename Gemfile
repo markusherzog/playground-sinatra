@@ -1,4 +1,7 @@
-source 'https://rubygems.org'
+source :rubygems
 gem 'sinatra'
 gem 'puma'
-gem 'shotgun'
+
+group :development do
+	gem 'shotgun'
+end
