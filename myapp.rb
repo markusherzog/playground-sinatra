@@ -2,15 +2,11 @@ class MyApp < Sinatra::Application
 	set :bind, '0.0.0.0'
 
 	after do
- 		puts response.status
+ 		#puts response.status
 	end
 
 	get '/' do
-		'Hello world!'
-	end
-
-	get '/hello/:name' do |name|
-		"Hallo #{name}"
+		erb :index
 	end
 
 	get '/yo!/:name' do |name|
