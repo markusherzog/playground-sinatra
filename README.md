@@ -3,6 +3,14 @@ playground-sinatra
 
 My playground for toying around with sinatra.
 
+bundle
+bundle exec npm install bower
+bower install
+cd bower_components/bootstrap
+npm install
 
-bundle exec shotgun -o 0.0.0.0
-http://ruby.dev:9393/hi
+start server by calling:
+rake
+
+view site at:
+http://box.dev:9393/

@@ -4,4 +4,11 @@ require 'bundler'
 Bundler.require
 
 require './myapp'
-run MyApp
+
+map '/assets' do
+	run MyApp.assets
+end
+
+map '/' do
+	run MyApp
+end

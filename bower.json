@@ -1,0 +1,13 @@
+{
+  "name": "playground-sinatra",
+  "version": "0.0.1",
+  "main": "myapp.rb",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}

@@ -1,5 +1,27 @@
+require 'bundler'
+Bundler.require
+
 class MyApp < Sinatra::Application
-	set :bind, '0.0.0.0'
+	
+
+	configure do
+		set :assets, Sprockets::Environment.new(root)
+
+		assets.append_path File.join(root, 'assets', 'stylesheets')
+		assets.append_path File.join(root, 'assets', 'javascripts')
+		assets.append_path File.join(root, 'bower_components', 'jquery', 'dist')
+		assets.append_path File.join(root, 'bower_components', 'bootstrap', 'dist')
+
+		Sprockets::Helpers.configure do |config|
+			config.environment = assets
+			config.prefix      = '/assets'
+			config.digest      = true
+		end
+	end
+
+	helpers do
+		include Sprockets::Helpers
+	end
 
 	after do
  		#puts response.status
